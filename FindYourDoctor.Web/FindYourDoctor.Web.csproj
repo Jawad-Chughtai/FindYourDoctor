@@ -67,12 +67,139 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.html" />
+    <Content Include="assets\img\doctors\doctor-01.jpg" />
+    <Content Include="assets\img\doctors\doctor-02.jpg" />
+    <Content Include="assets\img\doctors\doctor-03.jpg" />
+    <Content Include="assets\img\doctors\doctor-04.jpg" />
+    <Content Include="assets\img\doctors\doctor-05.jpg" />
+    <Content Include="assets\img\doctors\doctor-06.jpg" />
+    <Content Include="assets\img\doctors\doctor-07.jpg" />
+    <Content Include="assets\img\doctors\doctor-08.jpg" />
+    <Content Include="assets\img\doctors\doctor-09.jpg" />
+    <Content Include="assets\img\doctors\doctor-10.jpg" />
+    <Content Include="assets\img\doctors\doctor-11.jpg" />
+    <Content Include="assets\img\doctors\doctor-12.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-01.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-02.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-03.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-04.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-05.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-06.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-07.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-08.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-09.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-10.jpg" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\features\feature-01.jpg" />
+    <Content Include="assets\img\features\feature-02.jpg" />
+    <Content Include="assets\img\features\feature-03.jpg" />
+    <Content Include="assets\img\features\feature-04.jpg" />
+    <Content Include="assets\img\features\feature-05.jpg" />
+    <Content Include="assets\img\features\feature-06.jpg" />
+    <Content Include="assets\img\features\feature.png" />
+    <Content Include="assets\img\footer-logo.png" />
+    <Content Include="assets\img\icon-01.png" />
+    <Content Include="assets\img\icon-02.png" />
+    <Content Include="assets\img\icon-03.png" />
+    <Content Include="assets\img\img-01.jpg" />
+    <Content Include="assets\img\img-02.jpg" />
+    <Content Include="assets\img\img-03.jpg" />
+    <Content Include="assets\img\img-04.jpg" />
+    <Content Include="assets\img\location.png" />
+    <Content Include="assets\img\login-banner.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\patients\patient.jpg" />
+    <Content Include="assets\img\patients\patient1.jpg" />
+    <Content Include="assets\img\patients\patient10.jpg" />
+    <Content Include="assets\img\patients\patient11.jpg" />
+    <Content Include="assets\img\patients\patient2.jpg" />
+    <Content Include="assets\img\patients\patient3.jpg" />
+    <Content Include="assets\img\patients\patient4.jpg" />
+    <Content Include="assets\img\patients\patient5.jpg" />
+    <Content Include="assets\img\patients\patient6.jpg" />
+    <Content Include="assets\img\patients\patient7.jpg" />
+    <Content Include="assets\img\patients\patient8.jpg" />
+    <Content Include="assets\img\patients\patient9.jpg" />
+    <Content Include="assets\img\search-bg.png" />
+    <Content Include="assets\img\search.png" />
+    <Content Include="assets\img\specialities\specialities-01.png" />
+    <Content Include="assets\img\specialities\specialities-02.png" />
+    <Content Include="assets\img\specialities\specialities-03.png" />
+    <Content Include="assets\img\specialities\specialities-04.png" />
+    <Content Include="assets\img\specialities\specialities-05.png" />
+    <Content Include="assets\img\video-call.jpg" />
+    <Content Include="assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\circle-progress.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\profile-settings.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\slick.js" />
+    <Content Include="assets\plugins\bootstrap-tagsinput\css\bootstrap-tagsinput.css" />
+    <Content Include="assets\plugins\bootstrap-tagsinput\js\bootstrap-tagsinput.js" />
+    <Content Include="assets\plugins\dropzone\dropzone.min.css" />
+    <Content Include="assets\plugins\dropzone\dropzone.min.js" />
+    <Content Include="assets\plugins\fancybox\jquery.fancybox.min.css" />
+    <Content Include="assets\plugins\fancybox\jquery.fancybox.min.js" />
+    <Content Include="assets\plugins\fontawesome\css\all.min.css" />
+    <Content Include="assets\plugins\fontawesome\css\fontawesome.min.css" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.html" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\plugins\fullcalendar\jquery.fullcalendar.js" />
+    <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="assets\plugins\select2\css\select2.min.css" />
+    <Content Include="assets\plugins\select2\js\select2.min.js" />
+    <Content Include="assets\plugins\theia-sticky-sidebar\ResizeSensor.js" />
+    <Content Include="assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js" />
+    <Content Include="Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.Master.cs">
+      <DependentUpon>main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.Master.designer.cs">
+      <DependentUpon>main.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="main.Master" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900d41d.eot" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
