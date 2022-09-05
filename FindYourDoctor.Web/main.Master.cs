@@ -11,7 +11,16 @@ namespace FindYourDoctor.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["PatientId"] == null)
+            {
+                PatientLi.Visible = false;
+                LoginDiv.Visible = true;
+            }
+            else
+            {
+                PatientLi.Visible = true;
+                LoginDiv.Visible = false;
+            }
         }
     }
 }

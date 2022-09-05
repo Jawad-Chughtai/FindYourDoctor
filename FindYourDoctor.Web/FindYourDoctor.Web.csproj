@@ -67,6 +67,75 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\assets\css\bootstrap.min.css" />
+    <Content Include="admin\assets\css\feathericon.min.css" />
+    <Content Include="admin\assets\css\font-awesome.min.css" />
+    <Content Include="admin\assets\css\select2.min.css" />
+    <Content Include="admin\assets\css\style.css" />
+    <Content Include="admin\assets\fonts\feathericon.svg" />
+    <Content Include="admin\assets\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="admin\assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="admin\assets\fonts\MaterialIcons-Regular.html" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-01.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-02.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-03.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-04.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-05.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-06.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-07.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-08.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-09.jpg" />
+    <Content Include="admin\assets\img\doctors\doctor-thumb-10.jpg" />
+    <Content Include="admin\assets\img\favicon.png" />
+    <Content Include="admin\assets\img\img-01.jpg" />
+    <Content Include="admin\assets\img\logo-small.png" />
+    <Content Include="admin\assets\img\logo-white.png" />
+    <Content Include="admin\assets\img\logo.png" />
+    <Content Include="admin\assets\img\patients\patient1.jpg" />
+    <Content Include="admin\assets\img\patients\patient10.jpg" />
+    <Content Include="admin\assets\img\patients\patient11.jpg" />
+    <Content Include="admin\assets\img\patients\patient12.jpg" />
+    <Content Include="admin\assets\img\patients\patient13.jpg" />
+    <Content Include="admin\assets\img\patients\patient14.jpg" />
+    <Content Include="admin\assets\img\patients\patient15.jpg" />
+    <Content Include="admin\assets\img\patients\patient2.jpg" />
+    <Content Include="admin\assets\img\patients\patient3.jpg" />
+    <Content Include="admin\assets\img\patients\patient4.jpg" />
+    <Content Include="admin\assets\img\patients\patient5.jpg" />
+    <Content Include="admin\assets\img\patients\patient6.jpg" />
+    <Content Include="admin\assets\img\patients\patient7.jpg" />
+    <Content Include="admin\assets\img\patients\patient8.jpg" />
+    <Content Include="admin\assets\img\patients\patient9.jpg" />
+    <Content Include="admin\assets\img\profiles\avatar-01.jpg" />
+    <Content Include="admin\assets\img\profiles\avatar-02.jpg" />
+    <Content Include="admin\assets\img\profiles\avatar-03.jpg" />
+    <Content Include="admin\assets\img\profiles\avatar-04.jpg" />
+    <Content Include="admin\assets\img\specialities\specialities-01.png" />
+    <Content Include="admin\assets\img\specialities\specialities-02.png" />
+    <Content Include="admin\assets\img\specialities\specialities-03.png" />
+    <Content Include="admin\assets\img\specialities\specialities-04.png" />
+    <Content Include="admin\assets\img\specialities\specialities-05.png" />
+    <Content Include="admin\assets\js\bootstrap.min.js" />
+    <Content Include="admin\assets\js\chart.morris.js" />
+    <Content Include="admin\assets\js\form-validation.js" />
+    <Content Include="admin\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="admin\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="admin\assets\js\mask.js" />
+    <Content Include="admin\assets\js\popper.min.js" />
+    <Content Include="admin\assets\js\script.js" />
+    <Content Include="admin\assets\js\select2.min.js" />
+    <Content Include="admin\assets\plugins\datatables\datatables.min.css" />
+    <Content Include="admin\assets\plugins\datatables\datatables.min.js" />
+    <Content Include="admin\assets\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="admin\assets\plugins\morris\morris.css" />
+    <Content Include="admin\assets\plugins\morris\morris.min.js" />
+    <Content Include="admin\assets\plugins\raphael\raphael.min.js" />
+    <Content Include="admin\assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="admin\Dashboard.aspx" />
+    <Content Include="admin\Login.aspx" />
+    <Content Include="admin\newAreas.aspx" />
+    <Content Include="admin\newDoctors.aspx" />
+    <Content Include="admin\newLabs.aspx" />
     <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\style.css" />
@@ -163,16 +232,94 @@
     <Content Include="assets\plugins\select2\js\select2.min.js" />
     <Content Include="assets\plugins\theia-sticky-sidebar\ResizeSensor.js" />
     <Content Include="assets\plugins\theia-sticky-sidebar\theia-sticky-sidebar.js" />
+    <Content Include="Booking.aspx" />
+    <Content Include="DoctorsList.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="LabsList.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="PatientProfile.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Success.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\newAreas.aspx.cs">
+      <DependentUpon>newAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\newAreas.aspx.designer.cs">
+      <DependentUpon>newAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\newDoctors.aspx.cs">
+      <DependentUpon>newDoctors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\newDoctors.aspx.designer.cs">
+      <DependentUpon>newDoctors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\newLabs.aspx.cs">
+      <DependentUpon>newLabs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\newLabs.aspx.designer.cs">
+      <DependentUpon>newLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnection.cs" />
+    <Compile Include="DoctorsList.aspx.cs">
+      <DependentUpon>DoctorsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorsList.aspx.designer.cs">
+      <DependentUpon>DoctorsList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LabsList.aspx.cs">
+      <DependentUpon>LabsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LabsList.aspx.designer.cs">
+      <DependentUpon>LabsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.Master.cs">
       <DependentUpon>main.Master</DependentUpon>
@@ -181,7 +328,28 @@
     <Compile Include="main.Master.designer.cs">
       <DependentUpon>main.Master</DependentUpon>
     </Compile>
+    <Compile Include="PatientProfile.aspx.cs">
+      <DependentUpon>PatientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientProfile.aspx.designer.cs">
+      <DependentUpon>PatientProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="main.Master" />
@@ -200,6 +368,18 @@
     <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="admin\admin.Master" />
+    <Content Include="admin\assets\fonts\feathericon.eot" />
+    <Content Include="admin\assets\fonts\feathericon.ttf" />
+    <Content Include="admin\assets\fonts\feathericon.woff" />
+    <Content Include="admin\assets\fonts\feathericond41d.eot" />
+    <Content Include="admin\assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="admin\assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="admin\assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="admin\assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="admin\assets\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="admin\assets\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="admin\assets\fonts\MaterialIcons-Regular.woff" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

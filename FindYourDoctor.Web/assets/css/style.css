@@ -2288,7 +2288,7 @@ html.menu-opened body {
 	font-size: 20px;
 	margin-bottom: 0;
 }
-.search-box form {
+.search-box .search-form {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
