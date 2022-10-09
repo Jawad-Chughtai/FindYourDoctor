@@ -41,9 +41,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="date" class="form-control" id="date" runat="server" />
+                                    <span style="color:red" id="dateError" runat="server"></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="time" class="form-control" id="time" runat="server" />
+                                    <input type="time" class="form-control" id="time" runat="server" min="<%= opensAt %>" max="<%= closesAt %>" />
+                                    <span style="color:red" id="timeError" runat="server"></span>
                                 </div>
 
                             </div>

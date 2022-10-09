@@ -13,16 +13,22 @@ namespace FindYourDoctor.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             string QueryString = Request.QueryString["Area"];
+            string Spe = Request.QueryString["Spe"];
             string command = "";
-            if (string.IsNullOrEmpty(QueryString))
+            if (string.IsNullOrEmpty(QueryString) && string.IsNullOrEmpty(Spe))
             {
                 command = @"select * from tblLab 
-                                Inner join tblArea on tblLab.Area = tblArea.Id";
+                                Inner join tblArea on tblLab.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId";
+            }
+            else if (!string.IsNullOrEmpty(Spe))
+            {
+                command = @"select * from tblLab 
+                                Inner join tblArea on tblLab.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId where tblLab.SpecialityId = '" + Spe + "'";
             }
             else
             {
                 command = @"select * from tblLab 
-                                Inner join tblArea on tblLab.Area = tblArea.Id where tblLab.Area = '" + QueryString + "'";
+                                Inner join tblArea on tblLab.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId where tblLab.Area = '" + QueryString + "'";
             }
             SqlConnection con = dbConnection.getCon();
 
@@ -89,6 +95,11 @@ namespace FindYourDoctor.Web
         protected void search_ServerClick(object sender, EventArgs e)
         {
             Response.Redirect("LabsList.aspx?Area=" + area.SelectedValue);
+        }
+
+        protected void speciality_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("LabsList.aspx?Spe=" + specialityDDl.SelectedValue);
         }
     }
 }

@@ -33,6 +33,15 @@ namespace FindYourDoctor.Web
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date;
 
         /// <summary>
+        /// dateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dateError;
+
+        /// <summary>
         /// time control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace FindYourDoctor.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl time;
+
+        /// <summary>
+        /// timeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl timeError;
 
         /// <summary>
         /// submit control.

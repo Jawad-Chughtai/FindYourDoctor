@@ -18,8 +18,8 @@ namespace FindYourDoctor.Web.admin
         protected void submit_ServerClick(object sender, EventArgs e)
         {
             SqlConnection con = dbConnection.getCon();
-            string command = $"insert into tblLab (LabName, Description, Area, City, OpensAt, ClosesAt)" +
-                $"Values ('"+ LabName.Value +"', '"+ Description.Value +"', '"+ Area.SelectedValue +"', '"+ city.Value +"', " +
+            string command = $"insert into tblLab (LabName, SpecialityId, Area, City, OpensAt, ClosesAt)" +
+                $"Values ('"+ LabName.Value +"', '"+ specialityDDL.SelectedValue +"', '"+ Area.SelectedValue +"', '"+ city.Value +"', " +
                 "'"+ opens.Value +"', '"+ closes.Value +"')";
             SqlCommand cmd = new SqlCommand(command, con);
             con.Open();

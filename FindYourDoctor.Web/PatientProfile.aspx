@@ -12,7 +12,7 @@
                 <div class="col-md-8 col-12">
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                            <li class="breadcrumb-item">Home</li>
                             <li class="breadcrumb-item active" aria-current="page">Patient Profile</li>
                         </ol>
                     </nav>
@@ -41,13 +41,15 @@
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:dbDoctor %>' 
-                    SelectCommand="select a.Id, a.[Date], a.[Time], d.[Name], d.Speciality, tblArea.AreaName, d.City
+                    SelectCommand="select a.Id, a.[Date], a.[Time], d.[Name], s.Speciality, tblArea.AreaName, d.City
                                 from 
                                 tblAppointment as a
                                 inner join tblDoctor as d
                                 on a.DoctorId = d.Id
                                 inner join tblArea
                                 on d.Area = tblArea.Id
+                                inner join tblSpeciality as s
+                                on d.SpecialityId = s.Id
                                 where a.DoctorId != 0 and a.IsCancelled = 'false'
                                 order by a.Id DESC"
                                 UpdateCommand="update [tblAppointment] set [IsCancelled] = 'true' where ([Id] = @Id)">

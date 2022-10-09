@@ -13,19 +13,25 @@ namespace FindYourDoctor.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             string QueryString = Request.QueryString["Area"];
+            string Spe = Request.QueryString["Spe"];
 
             SqlConnection con = dbConnection.getCon();
             string command = "";
-            if (string.IsNullOrEmpty(QueryString))
+            if (string.IsNullOrEmpty(QueryString) && string.IsNullOrEmpty(Spe))
             {
                 command = @"select * from tblDoctor 
-                                Inner join tblArea on tblDoctor.Area = tblArea.Id";
+                                Inner join tblArea on tblDoctor.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId";
             }
+            else if (!string.IsNullOrEmpty(Spe))
+            {
 
+                command = @"select * from tblDoctor 
+                                Inner join tblArea on tblDoctor.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId where SpecialityId = '" + Spe + "'";
+            }
             else
             {
                 command = @"select * from tblDoctor 
-                                Inner join tblArea on tblDoctor.Area = tblArea.Id where tblDoctor.Area = '"+ QueryString +"'";
+                                Inner join tblArea on tblDoctor.Area = tblArea.Id inner join tblSpeciality on tblSpeciality.Id = SpecialityId where tblDoctor.Area = '" + QueryString +"'";
             }
             SqlCommand cmd = new SqlCommand(command, con);
 
@@ -59,7 +65,7 @@ namespace FindYourDoctor.Web
                                         <h4 class='doc-name'><a href='#'>{1}</a></h4>
                                         <p class='doc-speciality'>{2}</p>
                                         <h5 class='doc-department'>
-                                            <img src='assets/img/specialities/specialities-01.png' class='img-fluid' alt='Speciality'>{3}</h5>
+                                            <img src='assets/img/specialities/{10}.png' class='img-fluid' alt='Speciality'>{3}</h5>
                                         <h5 class='doc-department'>
                                             {4} to {5}</h5>
                                         <div class='rating'>
@@ -89,13 +95,18 @@ namespace FindYourDoctor.Web
                                 </div>
                             </div>
                         </div>
-                    </div>", Gender, Name, Description, Speciality, OpensAt, ClosesAt, Area, City, Fee, Id);
+                    </div>", Gender, Name, Description, Speciality, OpensAt, ClosesAt, Area, City, Fee, Id, Speciality);
             }
         }
 
         protected void search_ServerClick(object sender, EventArgs e)
         {
             Response.Redirect("DoctorsList.aspx?Area=" + area.SelectedValue);
+        }
+
+        protected void speciality_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("DoctorsList.aspx?Spe=" + specialityDDl.SelectedValue);
         }
     }
 }

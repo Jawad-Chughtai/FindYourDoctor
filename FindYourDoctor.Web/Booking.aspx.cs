@@ -12,8 +12,19 @@ namespace FindYourDoctor.Web
     {
         string Bookings = "";
         string Id = "";
+
+        string command = "";
+        string Name = "";
+        string Image = "";
+        string Location = "";
+        DateTime OpensAt = new DateTime();
+        DateTime ClosesAt = new DateTime();
+        public static string opensAt = "";
+        public static string closesAt = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            dateError.InnerHtml = "";
+            timeError.InnerHtml = "";
             Bookings = Request.QueryString["book"];
             Id = Request.QueryString["id"];
             if (string.IsNullOrEmpty(Bookings) || string.IsNullOrEmpty(Id))
@@ -23,12 +34,8 @@ namespace FindYourDoctor.Web
 
             if (Session["PatientId"] == null)
             {
-                Response.Redirect("Login.aspx?book="+Bookings+"&id="+Id);
+                Response.Redirect("Login.aspx?book=" + Bookings + "&id=" + Id);
             }
-            string command = "";
-            string Name = "";
-            string Image = "";
-            string Location = "";
 
             if (Bookings == "Lab")
             {
@@ -43,6 +50,10 @@ namespace FindYourDoctor.Web
                     Name = rd["LabName"].ToString();
                     Image = "assets/img/features/feature-01";
                     Location = rd["AreaName"].ToString() + ", " + rd["City"].ToString();
+                    OpensAt = Convert.ToDateTime(rd["OpensAt"]);
+                    ClosesAt = Convert.ToDateTime(rd["ClosesAt"]);
+                    opensAt = OpensAt.ToString("HH:mm");
+                    closesAt = ClosesAt.ToString("HH:mm");
                 }
                 con.Close();
             }
@@ -59,13 +70,15 @@ namespace FindYourDoctor.Web
                     Name = rd["Name"].ToString();
                     Image = "assets/img/doctors/" + rd["Gender"].ToString();
                     Location = rd["AreaName"].ToString() + ", " + rd["City"].ToString();
+                    OpensAt = Convert.ToDateTime(rd["StartAt"]);
+                    ClosesAt = Convert.ToDateTime(rd["CloseAt"]);
+                    opensAt = OpensAt.ToString("HH:mm");
+                    closesAt = ClosesAt.ToString("HH:mm");
                 }
                 con.Close();
             }
 
-
-
-            Details.InnerHtml += String.Format(@"
+            Details.InnerHtml = String.Format(@"
                     <div class='card'>
                         <div class='card-body'>
                             <div class='booking-doc-info'>
@@ -93,35 +106,52 @@ namespace FindYourDoctor.Web
         {
             string command = "";
             SqlConnection con = dbConnection.getCon();
-            if(Bookings == "Lab")
+            if (string.IsNullOrEmpty(date.Value) || string.IsNullOrEmpty(time.Value))
             {
-                command = @"Insert into tblAppointment (PatientId, LabId, DoctorId, Date, Time, IsCancelled) 
-                            Values ('" + Convert.ToInt32(Session["PatientId"])+"', '"+Convert.ToInt32(Id)+"'," +
-                            "'"+0+"', '"+date.Value+"', '"+time.Value+"', '"+ false +"')";
+                dateError.InnerHtml = "Please Select a Date";
+                timeError.InnerHtml = "Please Select a Time";
             }
-            else if(Bookings == "Doctor")
+            else if (Convert.ToDateTime(time.Value).TimeOfDay < OpensAt.TimeOfDay || Convert.ToDateTime(time.Value).TimeOfDay > ClosesAt.TimeOfDay)
             {
-                command = @"Insert into tblAppointment (PatientId, DoctorId, LabId, Date, Time, IsCancelled) 
+                timeError.InnerHtml = "Time Must be Between " + OpensAt.ToString("hh:mm:tt") + " and " + ClosesAt.ToString("hh:mm:tt");
+            }
+
+            else if (Convert.ToDateTime(date.Value).Date < DateTime.Today.Date)
+            {
+                dateError.InnerHtml = "Date Must be Today or Greater.";
+            }
+            else
+            {
+                if (Bookings == "Lab")
+                {
+                    command = @"Insert into tblAppointment (PatientId, LabId, DoctorId, Date, Time, IsCancelled) 
                             Values ('" + Convert.ToInt32(Session["PatientId"]) + "', '" + Convert.ToInt32(Id) + "'," +
-                            "'" + 0 + "', '" + date.Value + "', '" + time.Value + "', '"+ false +"')";
-            }
+                                "'" + 0 + "', '" + date.Value + "', '" + time.Value + "', '" + false + "')";
+                }
+                else if (Bookings == "Doctor")
+                {
+                    command = @"Insert into tblAppointment (PatientId, DoctorId, LabId, Date, Time, IsCancelled) 
+                            Values ('" + Convert.ToInt32(Session["PatientId"]) + "', '" + Convert.ToInt32(Id) + "'," +
+                                "'" + 0 + "', '" + date.Value + "', '" + time.Value + "', '" + false + "')";
+                }
 
-            SqlCommand cmd = new SqlCommand(command, con);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+                SqlCommand cmd = new SqlCommand(command, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
 
-            command = "SELECT * FROM tblAppointment WHERE Id=(SELECT max(id) FROM tblAppointment)";
-            cmd = new SqlCommand(command, con);
-            con.Open();
-            SqlDataReader rd = cmd.ExecuteReader();
-            int appointment = 0;
-            if (rd.Read())
-            {
-                appointment = Convert.ToInt32(rd["Id"]);
+                command = "SELECT * FROM tblAppointment WHERE Id=(SELECT max(id) FROM tblAppointment)";
+                cmd = new SqlCommand(command, con);
+                con.Open();
+                SqlDataReader rd = cmd.ExecuteReader();
+                int appointment = 0;
+                if (rd.Read())
+                {
+                    appointment = Convert.ToInt32(rd["Id"]);
+                }
+                con.Close();
+                Response.Redirect("Success.aspx?Id=" + appointment);
             }
-            con.Close();
-            Response.Redirect("Success.aspx?Id=" + appointment);
         }
     }
 }

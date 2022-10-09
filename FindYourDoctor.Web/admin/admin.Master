@@ -72,7 +72,13 @@
 								<a href="newDoctors.aspx"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 							</li>
 							<li> 
+								<a href="appointments.aspx"><i class="fe fe-calendar"></i> <span>Appointments</span></a>
+							</li>
+							<li> 
 								<a href="newAreas.aspx"><i class="fe fe-map"></i> <span>Areas</span></a>
+							</li>
+							<li> 
+								<a href="speciality.aspx"><i class="fe fe-check"></i> <span>Speciality</span></a>
 							</li>
 							<li> 
 								<a href="login.aspx"><i class="fe fe-close"></i> <span>Logout</span></a>

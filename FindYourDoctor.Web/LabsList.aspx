@@ -41,11 +41,30 @@
                                 <h4>Area</h4>
                                 <div>
                                     <asp:DropDownList CssClass="form-control" ID="area" runat="server" DataSourceID="SqlDataSource1" DataTextField="AreaName" DataValueField="Id"></asp:DropDownList>
-                                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:dbDoctor %>' SelectCommand="select * from tblArea order by AreaName ASC"></asp:SqlDataSource>
+                                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:dbDoctor %>' SelectCommand="SELECT [Id], [AreaName] FROM [tblArea] ORDER BY [AreaName]">
+                                    </asp:SqlDataSource>
                                 </div>
                             </div>
                             <div class="btn-search">
                                 <button type="button" class="btn btn-block" id="search" runat="server" onserverclick="search_ServerClick">Search</button>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="filter-widget">
+
+                                <h4>Speciality</h4>
+                                <div>
+                                    <asp:DropDownList CssClass="form-control" ID="specialityDDl" runat="server" DataSourceID="SqlDataSource2" DataTextField="Speciality" DataValueField="Id"></asp:DropDownList>
+                                    <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:dbDoctor %>' SelectCommand="SELECT [Id], [Speciality] FROM [tblSpeciality] WHERE ([IsForDoctor] = @IsForDoctor) ORDER BY [Speciality]">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="false" Name="IsForDoctor" Type="Boolean"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+                                </div>
+                            </div>
+                            <div class="btn-search">
+                                <button type="button" class="btn btn-block" id="speciality" runat="server" onserverclick="speciality_ServerClick">Search</button>
                             </div>
 
                         </div>

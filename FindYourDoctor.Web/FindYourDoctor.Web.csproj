@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Appointments.aspx" />
     <Content Include="admin\assets\css\bootstrap.min.css" />
     <Content Include="admin\assets\css\feathericon.min.css" />
     <Content Include="admin\assets\css\font-awesome.min.css" />
@@ -136,6 +137,7 @@
     <Content Include="admin\newAreas.aspx" />
     <Content Include="admin\newDoctors.aspx" />
     <Content Include="admin\newLabs.aspx" />
+    <Content Include="admin\speciality.aspx" />
     <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\style.css" />
@@ -250,6 +252,13 @@
     <Compile Include="admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="admin\Appointments.aspx.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Appointments.aspx.designer.cs">
+      <DependentUpon>Appointments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +293,13 @@
     </Compile>
     <Compile Include="admin\newLabs.aspx.designer.cs">
       <DependentUpon>newLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\speciality.aspx.cs">
+      <DependentUpon>speciality.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\speciality.aspx.designer.cs">
+      <DependentUpon>speciality.aspx</DependentUpon>
     </Compile>
     <Compile Include="Booking.aspx.cs">
       <DependentUpon>Booking.aspx</DependentUpon>
